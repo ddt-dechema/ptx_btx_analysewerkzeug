@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Routenbaukasten – PtX / BtX</title>
+<link href="favicon.ico" rel="icon">
+<link rel="stylesheet" href="styles.css">
+
+<style>
+:root {
+  --ink: #202C38; /* AC Farbe */
+  --green: #7FC818; /* AC Farbe */
+  --mint: #44546A;  /* AC Farbe */
+  --amber: #DE5619; /* AC Farbe */
+  --paper: #f7f5ef; /* Backgroundfarbe */
+  --white: #fff;
+  --text: #1D2D3A;  /* AC Farbe */
+  --muted: #67766f;
+  --line: #d8ded8;
+  --pale: #eaf0ea;
+  --error: #9d443c;
+  font-family: Inter, "Segoe UI", Arial, sans-serif;
+  color: var(--text);
+  background: var(--paper);
+}
+*{box-sizing:border-box}body{margin:0;font-size:14px;line-height:1.45}.top{background:var(--ink);color:#f5fbfc;padding:24px clamp(16px,4vw,48px)}.top-inner{max-width:1500px;margin:auto;display:flex;justify-content:space-between;align-items:flex-start;gap:18px}.eyebrow{text-transform:uppercase;letter-spacing:.13em;font-size:11px;font-weight:750;color:#a9cbd0;margin:0 0 7px}h1{font-size:clamp(24px,3vw,36px);line-height:1.1;letter-spacing:-.03em;margin:0 0 8px}.lede{margin:0;color:#d0e2e5;max-width:720px}.top-actions{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.button,.file-label{border:0;border-radius:7px;padding:9px 13px;font:inherit;font-weight:700;cursor:pointer}.file-label{background:#d4ebec;color:#143e47}.file-label:hover{background:#fff}.button.secondary{background:#d4ebec;color:#143e47}.button.secondary:hover{background:#fff}.db-file{position:absolute;left:-10000px;width:1px;height:1px;opacity:0}.statusline{max-width:1500px;margin:10px auto 0;color:#c4d9dc;font-size:12px}.notice{max-width:1500px;margin:14px auto 0;border:1px solid rgba(255,255,255,.23);background:rgba(255,255,255,.08);border-radius:8px;padding:9px 12px;color:#f0f7f8;font-size:12px}.notice strong{color:var(--amber)}main{max-width:1500px;margin:20px auto;padding:0 clamp(12px,2.2vw,28px)}.status-panel{display:flex;gap:10px;align-items:baseline;padding:12px 14px;border-radius:8px;background:white;border:1px solid var(--line);margin-bottom:16px}.status-panel strong{white-space:nowrap}.status-panel[data-state="valid"]{border-left:4px solid var(--green)}.status-panel[data-state="invalid"]{border-left:4px solid var(--red)}.status-panel[data-state="open"]{border-left:4px solid var(--amber)}.route-board{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;align-items:stretch}.stage{min-width:0;background:#fff;border:1px solid var(--line);border-radius:10px;box-shadow:0 7px 20px rgba(31,55,64,.05);padding:13px;display:flex;flex-direction:column}.stage-heading{display:flex;align-items:center;gap:8px;border-bottom:1px solid #e6edef;padding-bottom:9px}.stage-heading>span{font-size:10px;font-weight:800;color:var(--teal);background:var(--pale);border-radius:99px;padding:4px 6px}.stage-heading h2{font-size:15px;line-height:1.2;margin:0}.stage-caption{color:var(--muted);font-size:11px;margin:8px 0 10px;min-height:31px}.stage-content{display:grid;gap:8px;align-content:start;min-height:150px}.step-card{border:1px solid #d9e3e6;border-radius:8px;padding:9px;background:#fbfdfd}.step-card>strong{display:block;font-size:12px;margin-bottom:7px}.slot-note{display:block;color:var(--muted);font-size:10px;margin-top:3px}.option-list{display:grid;gap:6px}.module-option,.final-option,.target-option{width:100%;border:1px solid #b9c6ce;border-radius:7px;padding:8px 9px;background:#fff;color:var(--ink);font:inherit;text-align:left;cursor:pointer}.module-option:hover:not(:disabled),.final-option:hover:not(:disabled),.target-option:hover:not(:disabled){border-color:var(--teal);background:#f1f8f8}.module-option[aria-pressed="true"],.final-option[aria-pressed="true"],.target-option[aria-pressed="true"]{border-color:#17616e;background:#e7f3f3;box-shadow:inset 3px 0 #17616e}.module-option:disabled,.final-option:disabled,.target-option:disabled,.stream-chip.is-disabled{opacity:.45;cursor:not-allowed}.module-option:focus-visible,.final-option:focus-visible,.target-option:focus-visible{outline:3px solid #e2a72e;outline-offset:2px}.final-option{padding:10px 11px;font-weight:650}.option-sub{display:block;font-weight:400;font-size:10px;color:var(--muted);margin-top:2px}.ports{display:flex;flex-wrap:wrap;gap:4px;margin-top:7px}.port-tag{font-size:9px;border-radius:99px;padding:3px 6px;background:#edf2f3;color:#42565d}.port-tag.input{background:#e9f2ed;color:#286148}.port-tag.output{background:#eaf1f8;color:#31577d}.input-chip,.stream-chip,.product-card{border:1px solid #d7e1e4;border-radius:7px;padding:8px 9px;background:#fbfdfd;min-width:0}.input-chip span,.stream-chip span{display:block;font-size:12px;font-weight:650}.input-chip small,.stream-chip small{display:block;font-size:10px;color:var(--muted);margin-top:3px}.empty-state{border:1px dashed #c4d2d6;border-radius:7px;padding:10px;color:var(--muted);font-size:11px;background:#fafcfc}.product-list{display:grid;gap:7px}.target-option{display:grid;gap:3px}.target-option small{font-size:10px;color:var(--muted);font-weight:400}.validation{margin-top:16px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:start;background:#eaf1f2;border-left:4px solid #8aaeb4;border-radius:8px;padding:13px 15px}.validation h2{font-size:14px;margin:0 0 4px}.validation p{font-size:12px;color:#53666c;margin:0}.foot{max-width:1500px;margin:0 auto;padding:0 clamp(12px,2.2vw,28px) 25px;color:#6b7a7e;font-size:11px}.loading{opacity:.65;pointer-events:none}@media(max-width:1100px){.route-board{grid-template-columns:repeat(3,minmax(0,1fr))}.stage:nth-child(4),.stage:nth-child(5){min-height:230px}}@media(max-width:700px){.top-inner{display:grid}.route-board{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:480px){.route-board{grid-template-columns:1fr}.stage-content{min-height:80px}.validation{grid-template-columns:1fr}.top-actions>*{flex:1}}@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="top-inner">
+    <div><p class="eyebrow">PtX / BtX · kuratierte Routen</p><h1>Routenbaukasten</h1><p class="lede">Wähle ein Zielprodukt und sieh, welche Bereitstellungswege und Umwandlungsmodule zu den gespeicherten Routen passen.</p></div>
+    <div class="top-actions"><a class="button secondary" href="editor.html" style="text-decoration:none">Zum Routenatelier</a><label class="file-label" for="dbFile">SQLite-Datei öffnen</label><input class="db-file" id="dbFile" type="file" accept=".sqlite,.sqlite3,.db,application/octet-stream"></div>
+    <img src="DEC_AC-Kombi-Logo_Weiss.svg" alt="DEC AC Kombi Logo" height="100" align="right" width="auto">
+  </div>
+  <div id="dbStatus" class="statusline" aria-live="polite">Lade die Demo-Datenbank …</div>
+  <div class="notice"><strong>Demo-Hinweis:</strong> Diese Seite prüft gespeicherte Routen und Modul-Ports. Sie berechnet keine Ressourcenwerte und speichert keine Änderungen an der Datenbank.</div>
+
+</header>
+<main>
+  <section id="routeStatus" class="status-panel" aria-live="polite"><strong>Routenprüfung</strong><span>Daten werden geladen …</span></section>
+  <section id="routeBoard" class="route-board" aria-label="Prozessphasen">
+    <section class="stage"><div class="stage-heading"><span>01</span><h2>Edukte</h2></div><p class="stage-caption">Inputs der gewählten Bereitstellungsmodule</p><div id="feedstockStage" class="stage-content"></div></section>
+    <section class="stage"><div class="stage-heading"><span>02</span><h2>Primäre Umwandlung</h2></div><p class="stage-caption">Auswahlplätze können mehrere Varianten enthalten</p><div id="primaryStage" class="stage-content"></div></section>
+    <section class="stage"><div class="stage-heading"><span>03</span><h2>Zwischenprodukte</h2></div><p class="stage-caption">Streams, die Schritte innerhalb einer Route verbinden</p><div id="intermediateStage" class="stage-content"></div></section>
+    <section class="stage"><div class="stage-heading"><span>04</span><h2>Finale Umwandlung</h2></div><p class="stage-caption">Module einzeln, ohne Schritt-Karten</p><div id="finalStage" class="stage-content"></div></section>
+    <section class="stage"><div class="stage-heading"><span>05</span><h2>Zielprodukt</h2></div><p class="stage-caption">Wähle den Hauptzielstream</p><div id="targetStage" class="stage-content"></div></section>
+  </section>
+  <section class="validation"><div><h2>Was die Auswahl steuert</h2><p>Primäre Auswahlplätze werden nur dann geteilt, wenn sie in der Datenbank ausdrücklich denselben selection_slot haben. Finale Umwandlungen erscheinen als einzelne Optionen. Nicht passende Optionen bleiben sichtbar, sind aber deaktiviert.</p></div></section>
+</main>
+<footer class="foot">Die Datenbank enthält strukturelle Beispiele, keine validierten Prozess- oder Ressourcenwerte. Bitte fachlich prüfen, bevor sie veröffentlicht oder für Berechnungen verwendet wird.</footer>
+<script src="vendor/sql-wasm.js"></script>
+<script src="app.js" defer></script>
+</body>
+</html>
